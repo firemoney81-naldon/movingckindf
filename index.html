@@ -1,23 +1,440 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "2026년 이사 전체 체크리스트 완벽 가이드",
+          "description": "성공적인 이사를 위한 D-Day별, 항목별 상세 체크리스트 및 비용 절약 팁을 안내합니다.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "이사 4주 전 준비: 계획 및 계약",
+              "text": "이사 업체 선정, 견적 비교, 불필요한 짐 정리, 자녀 학교 전학 수속을 시작합니다."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "이사 1주 전 준비: 행정 및 명의 변경",
+              "text": "각종 공과금 정산, 우편물 주소 변경, 인터넷/전화 이전 신청, 가구/가전제품 폐기 신고를 완료합니다."
+            },
+            {
+              "@type": "HowToStep",
+              "name": "이사 당일 준비: 최종 점검 및 이사 진행",
+              "text": "현금 및 귀중품 별도 보관, 이삿짐 반출입 확인, 잔금 지불 및 집 상태 최종 확인을 진행합니다."
+            }
+          ]
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0; 
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f4f9fd; /* 부드러운 하늘색 계열 배경 */
+            color: #333;
+        }
+
+        header, main, footer {
+            max-width: 1000px; /* 넓은 레이아웃 */
+            margin: auto;
+            padding: 30px 25px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* 부드러운 그림자 */
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        
+        header {
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: #e6f7ff; /* 헤더 배경색 강조 */
+            margin-top: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            color: #00796b; /* 청록색 계열 강조 */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.35rem;
+            color: #4db6ac;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #4db6ac; /* 부드러운 청록색 */
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(77,182,172,0.4);
+            transition: background-color 0.3s ease, transform 0.2s;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+        .cta-btn:hover {
+            background-color: #00796b;
+            transform: translateY(-2px);
+        }
+
+        nav {
+            margin: 30px 0;
+            text-align: center;
+            background-color: #f0fdfc;
+            padding: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            font-weight: 600;
+            color: #00796b;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 5px;
+            transition: border-color 0.3s ease, color 0.3s;
+            font-size: 1.05rem;
+        }
+        nav a:hover {
+            border-bottom: 3px solid #4db6ac;
+            color: #004d40;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            color: #00796b;
+            border-bottom: 3px solid #b2dfdb;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        section h3 {
+            font-size: 1.5rem;
+            color: #4db6ac;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid #80cbc4;
+            font-weight: 600;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .checklist-form {
+            background: #f0fdfc; /* 연한 청록색 배경 */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: inset 0 0 15px #e0f2f1;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px dashed #b2dfdb;
+        }
+        
+        .checklist-item label {
+            flex-grow: 1;
+            font-size: 1.05rem;
+            color: #004d40;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+        .checklist-item input[type=checkbox] {
+            margin-right: 15px;
+            min-width: 20px;
+            height: 20px;
+            accent-color: #4db6ac;
+        }
+        
+        .checklist-item input[type=checkbox]:checked + label {
+            text-decoration: line-through;
+            color: #9e9e9e;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1rem;
+            text-align: left;
+        }
+        
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            border: 1px solid #e0f2f1;
+        }
+        
+        .data-table th {
+            background-color: #b2dfdb;
+            color: #004d40;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .data-table tr:nth-child(even) {
+            background-color: #f7fcfc;
+        }
+
+        .external-links {
+            padding: 20px;
+            background-color: #f0fdfc;
+            border: 1px solid #b2dfdb;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .external-links a {
+            display: block;
+            margin-bottom: 8px;
+            color: #00796b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .external-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .long-text {
+            column-count: 2; /* 다단으로 구성하여 가독성 높임 */
+            column-gap: 30px;
+            text-align: justify;
+            padding: 10px 0;
+        }
+        
+        .long-text p {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #666;
+            background: #e6f7ff;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>✅ 이사 전체 체크리스트 완벽 가이드 2026</h1>
+        <p>포장이사, 반포장이사, 셀프이사 유형별 최적화된 **이사 준비 순서**와 **비용 절약 비법**을 상세히 안내합니다.</p>
+        <a href="#checklist-section" class="cta-btn">나만의 이사 체크리스트 시작하기</a>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <a href="#d-day-guide">D-Day별 가이드</a>
+        <a href="#cost-analysis">이사 비용 분석</a>
+        <a href="#checklist-section">실시간 체크리스트</a>
+        <a href="#seo-keywords">핵심 키워드</a>
+        <a href="#references">신뢰 기관</a>
     </nav>
+
     <main>
-      <h1>Home page</h1>
+        <section id="d-day-guide">
+            <h2>🏠 이사 D-Day별 완벽 준비 순서</h2>
+            <div class="long-text">
+                <p>성공적인 이사는 철저한 **이사 전체 체크리스트**를 바탕으로 시작됩니다. 이사 계획은 최소 4주 전부터 세우는 것이 이상적이며, 복잡한 행정 절차와 이삿짐 정리를 놓치지 않기 위해 체계적으로 접근해야 합니다. 특히 2026년에는 주택 임대차 관련 법규 및 전세보증금 반환 정책의 소폭 변화가 예상되므로, 관련 정보를 미리 확인하는 것이 중요합니다. **포장이사 체크리스트**를 활용하더라도 행정 처리만큼은 직접 챙겨야 합니다.</p>
+                
+                <h3>D-Day 4주 전: 이사 계획 수립 및 업체 선정</h3>
+                <p>이사 날짜가 확정되면 가장 먼저 할 일은 **이사 유형(포장이사, 반포장이사, 셀프이사)**을 결정하고 **이사 업체**를 선정하는 것입니다. 최소 3곳 이상의 업체에서 방문 견적을 받는 것이 **이사 비용 절약**의 핵심입니다. 견적 시에는 추가 비용 발생 여부(사다리차, 에어컨 탈부착, 특수 짐 등)를 명확히 확인해야 합니다. 이 시기에는 불필요한 짐을 정리(폐가전/폐가구 수거 예약)하고, 자녀가 있는 경우 전학 수속 절차를 알아봐야 합니다. 특히, **서울** 강남이나 **경기** 분당처럼 인구 밀집도가 높은 지역으로 이사할 경우, 원하는 이사 업체나 날짜 확보가 어려울 수 있으니 서두르는 것이 좋습니다. **부산**, **인천**, **대구**, **대전**, **광주** 등 주요 광역시 이사 시에도 마찬가지로 경쟁이 치열합니다.</p>
+                
+                <h3>D-Day 2주 전: 계약 및 행정 준비</h3>
+                <p>이사 계약을 체결했다면, 이제 행정적인 부분을 준비할 차례입니다. 신규 주택의 **확정일자**를 받기 위한 준비(잔금일 또는 그 이전)와 기존 주택의 관리비, 공과금(전기, 가스, 수도) 정산을 위한 예약 및 명의 변경을 시작해야 합니다. 우편물 주소 변경 서비스(우체국)를 신청하고, 사용하던 인터넷, 전화, 케이블 TV 등의 이전 또는 해지 신청을 합니다. 이삿짐 포장에 필요한 박스나 포장재가 부족하다면 미리 확보해야 합니다. **울산**이나 **세종** 등 신도시는 신축 아파트 입주 시 관리비 정산 시스템이 복잡할 수 있으니 관리사무소에 문의하는 것이 좋습니다. 또한, **수원**, **용인**, **성남** 등 수도권 대도시 이사 시에는 지역별 특화된 폐기물 처리 규정을 확인해야 합니다.</p>
+                
+                <h3>D-Day 1주 전: 최종 점검 및 짐 마무리</h3>
+                <p>이삿짐 포장의 마무리 단계입니다. 귀중품(통장, 도장, 현금, 보석류)은 별도의 가방에 챙겨 직접 관리할 수 있도록 준비합니다. 냉장고와 세탁기는 이사 하루 전날까지 내용물을 비우고 전원을 뽑아 내부를 건조시켜야 합니다. 이사 당일 이사 인력에게 제공할 식사나 음료수를 미리 준비하거나 계획을 세웁니다. 주유소, 마트 멤버십 카드 등의 주소 변경도 잊지 않도록 **이사 전체 체크리스트**에 기재합니다. **제주**나 **강원** 지역처럼 장거리 이사 시에는 운송 과정에서의 파손 위험을 줄이기 위해 이사 업체와 꼼꼼히 상의해야 합니다. **전주**, **청주**, **천안** 등 중소도시 이사의 경우에도 이사 당일 동선을 미리 파악해두면 시간을 절약할 수 있습니다.</p>
+
+                <h3>D-Day 1일 전: 마지막 정리</h3>
+                <p>모든 이삿짐 포장이 완료되었는지 최종 확인합니다. 냉장고의 전원을 끄고 물기를 제거하며, 세탁기의 물도 모두 빼놓습니다. 이사 당일 사용할 세면도구, 옷, 간단한 식기류 등은 '마지막 박스'로 지정하여 따로 보관합니다. 이사 업체 연락처, 부동산 중개인 연락처, 은행 계좌 정보 등 중요 연락망을 메모해 둡니다. 특히, **고양**, **화성**, **남양주** 등 **경기**권 외곽 지역에서 출퇴근 시 차량을 이용한다면 주차 공간 확보 문제를 미리 해결해야 합니다. **창원**, **포항**과 같이 산업 단지가 있는 지역으로 이사하는 경우, 공단 주변 교통 상황을 미리 고려하여 이사 시작 시간을 정하는 것이 좋습니다.</p>
+                
+                <h3>D-Day 당일: 이사 진행 및 최종 확인</h3>
+                <p>이삿짐 반출 시에는 귀중품을 직접 챙기고, 이사 팀장과 함께 파손되기 쉬운 물품 리스트를 확인합니다. 짐이 모두 나가면 기존 집의 공과금(가스 계량기 최종 확인, 전기 계량기 확인)을 정산하고, 집 상태를 점검한 후 잔금을 치릅니다. 새 집으로 도착하면 이삿짐 배치도를 보며 가구 배치를 지시하고, 파손 및 분실 여부를 꼼꼼하게 체크합니다. 잔금 지불 후 바로 **전입신고** 및 **확정일자**를 받습니다. 이는 대항력 및 우선변제권을 확보하는 중요한 절차입니다. **김해**, **구미**, **순천** 등 각 지역의 동사무소(행정복지센터) 위치를 미리 파악해 두는 것이 좋습니다.</p>
+                
+                <h3>D-Day 이사 후: 행정 마무리 및 정리</h3>
+                <p>가장 중요한 것은 **전입신고**와 **확정일자**를 완료하는 것입니다. 인터넷으로 '정부24'를 통해 편리하게 처리할 수 있습니다. 자동차 등록증 주소 변경(의무 사항), 각종 카드사, 보험사, 은행 등의 주소 변경도 이 시기에 진행해야 합니다. 이삿짐을 풀 때는 자주 사용하는 물건부터 정리하고, 불필요한 포장재는 폐기물로 분류하여 처리합니다. 새로운 지역의 생활 정보(병원, 마트, 교통 정보)를 파악하는 것도 중요합니다. 특히 **천안 아산**, **원주** 등 신흥 주거지의 경우 대중교통 노선이 자주 바뀌므로 최신 정보를 확인해야 합니다.</p>
+
+                <h4>2026년 이사 관련 예상 정책 및 팁</h4>
+                <p>2026년에는 이사 관련하여 임대차 3법의 일부 개정 논의가 지속될 것으로 보이며, 특히 전세사기 예방을 위한 **안심 전세앱**을 활용한 주택 정보 확인이 더욱 강조될 것입니다. 또한, 장거리 이사에 대한 세금 공제 혜택 확대 방안이 검토 중일 수 있습니다. **이사 전체 체크리스트**에 '정부 정책 변화 확인' 항목을 추가하는 것이 현명합니다. 이사 비용 산정 시, 에너지 절약형 가전제품을 이용할 경우 받을 수 있는 지역별 보조금 혜택도 놓치지 않아야 합니다. 이사 중 발생할 수 있는 분쟁을 대비하여 이사 계약서와 영수증을 철저히 보관해야 합니다. 이외에도 **청약 통장** 주소 변경, **건강보험** 및 **국민연금** 주소 변경 등은 이사 직후 반드시 해야 할 필수 항목들입니다. **전국** 어디로 이사를 하든, 기본적인 절차는 동일하되 지역별 조례나 규정만 확인하면 됩니다.</p>
+                
+                <p><strong><a href="#cost-analysis">이사 비용을 분석하고 싶다면 아래 표를 참고하세요.</a></strong></p>
+
+                <p>이사 비용은 단순히 짐의 양뿐만 아니라 **이사 날짜**에 따라 크게 달라집니다. 손 없는 날이나 월말은 이사 성수기로 간주되어 **이사 비용**이 20%에서 50%까지 상승할 수 있습니다. 따라서 이사 날짜를 유연하게 조정할 수 있다면 평일이나 비수기를 선택하는 것이 **이사 비용 절약**의 가장 확실한 방법입니다. **포장이사**의 경우, 견적에 포함된 서비스 범위(청소, 정리 정돈 등)를 명확히 하고, 이사 당일 작업 인원수를 반드시 확인해야 합니다. 만약 **반포장이사**를 선택했다면, 잔짐 포장 및 정리는 이사 당일 큰 시간을 차지하므로 미리 계획해야 합니다. **셀프이사**는 비용은 저렴하지만 체력 소모와 시간 투자가 크다는 점을 고려해야 합니다.</p>
+                
+                <p>지역별 이사 특성도 고려해야 합니다. 예를 들어, **경기** 과천이나 **하남**과 같이 재건축 및 신축 아파트 단지가 많은 지역은 이사 수요가 집중되어 이사 성수기가 길어질 수 있습니다. 반면, **전남** 목포나 **경북** 안동 등 비교적 이사 수요가 적은 지역은 이사 업체 선택의 폭이 좁을 수 있습니다. **세종**시나 **동탄** 신도시와 같은 계획 도시들은 아파트 입주 기간이 정해져 있어 그 기간 동안은 이사 비용이 폭등하는 경향이 있습니다. 이사 준비를 할 때 이사 갈 지역의 특성을 파악하여 미리 대비하는 것이 중요합니다. 특히 **강릉**, **속초**, **여수** 등 관광 도시의 경우, 주말이나 휴가철에는 이사 차량의 진입이 어려울 수 있으므로 평일을 이용하는 것이 좋습니다.</p>
+                
+                <p>행정 처리의 경우, **전입신고**는 필수이지만 자녀가 있는 경우 **초등학교 전학** 수속이 매우 중요합니다. 신규 거주지의 동사무소에 전입신고를 하면 자동으로 전학 서류가 처리되지만, 자세한 사항은 교육청이나 전입할 학교에 직접 문의해야 합니다. 아파트 관리비 정산 시에는 장기수선충당금 등 미리 납부했던 항목을 반드시 환급받도록 체크해야 합니다. **이사 전체 체크리스트**에서 '금융/보험사 주소 변경' 항목은 혹시 모를 중요한 우편물 누락을 막기 위해 가장 빠르게 처리해야 할 항목 중 하나입니다. 또한, **이사** 시 반려동물을 키우는 경우, 동물 등록 변경 신고(시청/구청)도 잊지 말아야 합니다.</p>
+
+                <p>이사 당일 발생하는 변수들에 대한 대비책도 중요합니다. 예를 들어, 갑작스러운 날씨 변화(폭우, 폭설)로 인해 이사 작업이 지연될 경우를 대비하여 이사 업체와의 계약서에 지연에 대한 보상 규정을 명시해 두는 것이 좋습니다. 이삿짐이 파손되었을 경우를 대비해 **이사 화물 배상 책임 보험** 가입 여부 및 보상 한도를 사전에 확인해야 합니다. 특히 고가품이나 예술품을 보유하고 있다면, 별도로 특약 보험에 가입하는 것을 고려해야 합니다. 이러한 세부적인 내용들을 꼼꼼하게 점검하는 것이 바로 **전문적인 이사 전체 체크리스트**의 핵심입니다. **서울** 강북, **경기** 일산, **충남** 서산, **경남** 양산, **전북** 군산 등 지역을 불문하고, 이사 준비는 디테일 싸움이라는 것을 명심해야 합니다.</p>
+
+                <p>전국 주요 도시 이사 시 고려할 사항을 자세히 살펴보겠습니다. **서울**은 구별로 주차 환경이 극명하게 갈리기 때문에 사전에 주차 허가증(관리사무소 또는 구청)을 받아야 합니다. **경기도**의 **수원**, **성남**, **고양**, **용인**, **부천**, **안산**, **안양**, **화성**, **남양주**, **평택**, **시흥**, **파주**, **의정부**, **김포**, **광주**, **광명**, **군포**, **오산**, **이천**, **안성**, **하남** 등에서는 인구 유입이 활발하여 이사 수요가 높습니다. 특히 신도시인 **동탄**, **검단** 등은 입주 지정 기간에 이사 대란이 일어날 수 있습니다. **인천**은 구도심과 신도심의 특징이 다르므로 이사 환경을 잘 살펴야 합니다.</p>
+                <p>**부산**은 해안가 지역과 내륙 지역의 아파트 구조나 엘리베이터 유무가 다양하며, **대구**는 비교적 평지가 많아 이사 동선이 수월할 수 있습니다. **대전**과 **광주**, **울산**은 광역시 특성상 출퇴근 시간을 피한 이사 시간 계획이 중요합니다. **세종**은 정부 기관이 밀집해 있어 보안 규정이 까다로운 곳도 있습니다. **강원도**의 **춘천**, **원주**, **강릉** 등은 겨울철 도로 상황을 고려해야 합니다. **충청도**의 **천안**, **청주**, **아산**은 산업단지 근로자 이동이 잦아 이사 수요가 꾸준합니다. **전라도**의 **전주**, **군산**, **목포**, **여수**, **순천**는 장거리 이사가 많아 운송료 산정을 꼼꼼히 확인해야 합니다. **경상도**의 **창원**, **포항**, **구미**, **김해**, **양산**은 공업 도시의 특성을 반영한 이사 준비가 필요합니다. 마지막으로 **제주도**는 섬이라는 특성상 해상 운송 비용과 일정을 고려한 **이사 전체 체크리스트**를 만들어야 합니다.</p>
+
+                <p><strong>연관 키워드 및 자동완성 키워드:</strong> 이사비용 계산, 이사 견적 비교, **포장이사 가격**, 이삿짐센터 추천, 이사 날짜 정하기, **이사 준비물**, **이사 체크리스트 양식**, 원룸 이사 비용, 주택 임대차 신고, **전입신고 기간**, 이사 후 할일, 부동산 중개 수수료, 입주 청소 체크리스트, 이사 계약서 양식, **손 없는 날 2026**.</p>
+            </div>
+            </section>
+
+        <hr>
+
+        <section id="cost-analysis">
+            <h2>💰 2026년 이사 비용 분석 및 절감 전략</h2>
+            <h3>이사 유형별 평균 비용 비교 (5톤 기준, 2026년 예상)</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>이사 유형</th>
+                        <th>평균 예상 비용 (KRW)</th>
+                        <th>주요 절감 방법</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>포장이사</td>
+                        <td>200만 ~ 350만원</td>
+                        <td>평일 이사, 비수기 선택, 불필요한 짐 정리</td>
+                    </tr>
+                    <tr>
+                        <td>반포장이사</td>
+                        <td>150만 ~ 250만원</td>
+                        <td>잔짐 직접 포장/정리, 포장재 직접 구매</td>
+                    </tr>
+                    <tr>
+                        <td>셀프이사</td>
+                        <td>80만 ~ 150만원</td>
+                        <td>용달차 및 인력 직접 섭외, 주말/공휴일 피하기</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>이사 전체 체크리스트</strong>에 명시된 대로, 견적 시 특약 사항(에어컨, 벽걸이 TV) 비용을 반드시 분리하여 확인하고, 이사 당일 추가 비용을 요구하는 행위에 대해 명확히 거부할 수 있도록 계약서에 명시해야 합니다. 특히 **포장이사 체크리스트**를 활용하여 계약 전 모든 서비스 항목을 확인하는 것이 중요합니다.</p>
+        </section>
+        
+        <hr>
+
+        <section id="checklist-section">
+            <h2>📝 나만의 이사 전체 체크리스트 (D-Day별 입력/관리)</h2>
+            <p>아래 **이사 체크리스트 양식**에 따라 이사 준비 상태를 직접 입력하고 체크하여 효율적인 이사를 진행하세요. 체크박스를 클릭하면 완료 표시가 됩니다.</p>
+
+            <form class="checklist-form">
+                <h3>D-Day 4주 전 체크리스트</h3>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4-1">
+                    <label for="check4-1">이사 날짜 확정 및 **포장이사** 견적 3곳 이상 비교</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4-2">
+                    <label for="check4-2">불필요한 짐(가구/가전) 정리 및 폐기물 스티커 구매</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check4-3">
+                    <label for="check4-3">신규 주택 **전세** 또는 **매매** 계약 완료 및 **확정일자** 준비</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="text" id="custom-4" placeholder="추가 이사 준비 항목을 직접 입력하세요.">
+                </div>
+                
+                <h3>D-Day 1주 전 체크리스트</h3>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1-1">
+                    <label for="check1-1">우편물 주소 변경 서비스(우체국) 신청 완료</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1-2">
+                    <label for="check1-2">인터넷, 전화, 케이블 TV 이전/해지 예약</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check1-3">
+                    <label for="check1-3">도시가스, 전기, 수도 요금 정산 및 예약</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="text" id="custom-1" placeholder="추가 명의 변경 항목을 직접 입력하세요.">
+                </div>
+            </form>
+            
+            <blockquote>
+                정확하고 신뢰할 수 있는 이사를 위해, 모든 이사 항목은 서류로 남겨 보관하는 것이 좋습니다.
+            </blockquote>
+        </section>
+        
+        <hr>
+
+        <section id="seo-keywords">
+            <h2>🔑 핵심 이사 연관 키워드 및 지역명</h2>
+            <p>이 정보는 검색 엔진 최적화(SEO)를 위해 추출된 핵심 키워드 리스트입니다. 귀하의 **이사 전체 체크리스트** 정보 탐색에 도움이 됩니다.</p>
+            <h3>전국 유명 지역명 키워드 (50개 이상)</h3>
+            <ul>
+                <li>**서울**: 강남, 강북, 서초, 송파, 마포, 영등포, 종로, 강동</li>
+                <li>**경기**: 수원, 성남, 용인, 고양, 부천, 안산, 안양, 화성, 남양주, 평택, 시흥, 파주, 의정부, 김포, 광주, 광명, 군포, 오산, 이천, 안성, 하남, 동탄, 검단</li>
+                <li>**광역시**: 부산, 대구, 인천, 대전, 광주, 울산, 세종</li>
+                <li>**지방 거점**: 천안, 청주, 아산, 원주, 강릉, 전주, 군산, 목포, 여수, 순천, 창원, 포항, 구미, 김해, 양산, 제주</li>
+            </ul>
+            
+            <h3>자동완성 및 함께 많이 찾는 키워드</h3>
+            <ul>
+                <li>**이사 전체 체크리스트** PDF, **이사 체크리스트** 어플, **포장이사 체크리스트** 상세, **이사 준비** 팁, **이사 순서** 완벽 정리, **전입신고** 인터넷, **확정일자** 받는 법, 이사 후 할일, 이사 폐기물 처리, 2026년 이사 대책.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="references">
+            <h2>🌐 공인된 신뢰 기관 외부 참조</h2>
+            <div class="external-links">
+                <p>성공적이고 안전한 이사 준비를 위해 공신력 있는 기관의 정보를 참고하세요.</p>
+                <a href="https://www.gov.kr/" target="_blank">✅ 정부24: 전입신고 및 확정일자 (필수 행정 처리)</a>
+                <a href="https://www.law.go.kr/" target="_blank">✅ 법제처 국가법령정보센터: 주택 임대차보호법 등 법규 확인</a>
+                <a href="https://www.e-gov.go.kr/main?a=AA010InfoDetailApp&app=13100000030" target="_blank">✅ 행정안전부: 민원24 이사 관련 서비스 안내</a>
+                <a href="https://www.nso.or.kr/" target="_blank">✅ 통계청(KOSIS): 지역별 인구 이동 및 생활 통계 자료</a>
+                <a href="https://namu.wiki/w/이사" target="_blank">✅ 나무위키: 이사 관련 상식 및 정보</a>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+    <footer>
+        <p>Copyright &copy; 2026 이사 전체 체크리스트 전문가 가이드. 모든 권리 보유. 본 정보는 2026년 예상 정책 및 최신 정보를 바탕으로 구성되었습니다.</p>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.checklist-item input[type=checkbox]').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    console.log(`체크리스트 항목 완료: ${e.target.nextElementSibling.textContent}`);
+                } else {
+                    console.log(`체크리스트 항목 해제: ${e.target.nextElementSibling.textContent}`);
+                }
+            });
+        });
+    </script>
+</body>
